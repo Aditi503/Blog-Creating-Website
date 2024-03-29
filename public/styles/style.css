@@ -1,0 +1,69 @@
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+/* Header styling */
+
+nav {
+  position: fixed; /* Fixed positioning */
+  width: 100%; /* Take up full width */
+  background-color: rgba(135, 206, 235, 0.5); /* Semi-transparent background color */
+  z-index: 1; /* Ensure it's above other content */
+}
+
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+nav ul li {
+  float: left;
+}
+
+nav ul li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+nav ul li a:hover {
+background-color: rgb(85, 26, 139);
+}
+
+/* Footer styling */
+footer {
+  background-color: #87CEEB;
+    color: #fff;
+    text-align: center;
+    position: fixed; /* Fixed positioning */
+    width: 100%; /* Take up full width */
+    bottom: 0; /* Place at the bottom of the viewport */
+}
+#logo{
+  list-style: none;
+  display: inline-flex;
+  color: rgb(85, 26, 139);
+  margin: 0;
+}
+#logo li{
+  color: rgb(85, 26, 139);
+  font-size: 25px;
+  padding-inline-end: 50px;
+}
+#logo li:hover{
+  animation: zoom-in 1s ease-in-out infinite alternate;
+}
+@keyframes zoom-in {
+    from {
+        transform: scale(1); /* Start scale */
+    }
+    to {
+        transform: scale(1.2); /* End scale (zoom in) */
+    }
+}

@@ -1,0 +1,49 @@
+<%- include("partials/header.ejs") %>
+<div class="container-view">
+    <div class="content-blog">
+        <div class="blog-titles">
+            <h2>All Blog Titles</h2>
+            <ul>
+                <% blogsData.forEach(blog => { %>
+                    <li class="blog-title"><a href="/edit?title=<%= encodeURIComponent(blog.title) %>"><%= blog.title %></a></li>
+                <% }); %>
+            </ul>
+        </div>
+        <div class="blog-content">
+            <% if(clickedBlog) { %>
+            <div class="content-form">
+                <form action="/update" method="POST">
+                    <h2>Edit Blog</h2>
+                    <div>
+                        <label for="Name">Your Name:</label>
+                        <input type="text" name="firstname" value="<%= clickedBlog.Name %>" placeholder="Your name.." required>
+                    </div>
+                    <div>
+                        <label for="Thanks">Blog Thank:</label>
+                        <input type="text" name="thanks" value="<%= clickedBlog.thank %>" placeholder="Your email.." required>
+                    </div>
+                    <div>
+                        <label for="Title">Blog Title:</label>
+                        <input type="text" name="title" value="<%= clickedBlog.title %>" placeholder="Title of your blog.." required>
+                    </div>
+                    <div>
+                        <label for="Notes">Blog Notes:</label>
+                        <input type="text" name="notes" value="<%= clickedBlog.note %>" placeholder="Notes for your blog.." required>
+                    </div>
+                    <div>
+                        <label for="content">Blog Content:</label>
+                        <textarea id="content" name="blog" placeholder="Write something.." style="height:100px" required><%= clickedBlog.content %></textarea>
+                    </div>
+                    <input type="submit" value="Update">
+                </form>
+                <% if(locals.message){ %>
+                    <%= message %>
+                <% } %>
+            </div>
+            <% } else { %>
+            <h2>No blog selected</h2>
+            <% } %>
+        </div>
+    </div>
+</div>
+<%- include("partials/footer.ejs") %>

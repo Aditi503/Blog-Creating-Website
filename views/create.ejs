@@ -1,0 +1,31 @@
+<%- include("partials/header.ejs") %>
+  <div class="content-form">
+    <form action="/submit" method="POST">
+      <h2>Enter your blog content here </h2>
+      <div>
+        <label for="Name">Your Name:</label>
+        <input type="text" name="firstname" placeholder="Your name.." required>
+    </div>
+    <div>
+        <label for="Thanks">Blog Thank:</label>
+        <input type="text" name="thanks" placeholder="Your email.." required>
+    </div>
+    <div>
+      <label for="Title">Blog Titles:</label>
+      <input type="text" name="title" placeholder="Your name.." required>
+  </div>
+  <div>
+    <label for="Notes">Blog Notes:</label>
+    <input type="text" name="notes" placeholder="Your email.." required>
+  </div>
+      <div style="width: 100%;">
+          <label for="content">Blog content:</label>
+          <textarea id="content" name="blog" placeholder="Write something.." style="height:100px" required></textarea>
+      </div>
+      <input type="submit" value="Submit">
+      <% if(locals.message){ %>
+        <%= message %>
+    <% } %>
+  </form>
+  </div> 
+<%- include("partials/footer.ejs") %>

@@ -1,0 +1,29 @@
+<%- include("partials/header.ejs") %>
+
+<div class="delete-container">
+    <table>
+        <thead>
+            <tr>
+                <th colspan="2">Delete Blog</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% blogsData.forEach(blog => { %>
+                <tr>
+                    <td><%= blog.title %></td>
+                    <td>
+                        <form action="/delete" method="POST" class="delete-form">
+                            <input type="hidden" name="title" value="<%= blog.title %>">
+                            <button type="submit">Delete</button>
+                        </form>
+                    </td>
+                </tr>
+            <% }); %>
+        </tbody>
+    </table>
+    <% if(locals.message){ %>
+        <%= message %>
+    <% } %>
+</div>
+
+<%- include("partials/footer.ejs") %>

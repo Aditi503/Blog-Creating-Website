@@ -1,0 +1,180 @@
+/* Home Page styling */
+  .landing-page {
+    background-image: url('/images/background2.jpg'); /* Replace 'background.jpg' with your image path */
+    background-size: cover;
+    background-position: center;
+    height: 100vh; /* Full viewport height */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    text-align: center;
+}
+
+.content {
+    max-width: 600px;
+}
+
+h1 {
+    font-size: 3em;
+    margin-bottom: 20px;
+}
+
+span{
+  color: rgb(85, 26, 139);
+}
+
+p {
+    font-size: 1.2em;
+    margin-bottom: 30px;
+}
+
+.explore-button {
+    display: inline-block;
+    background-color: #87CEEB;
+    color: #fff;
+    text-decoration: none;
+    padding: 15px 30px;
+    border-radius: 5px;
+    font-size: 1.2em;
+    transition: background-color 0.3s ease;
+}
+
+.explore-button:hover {
+    background-color: rgb(85, 26, 139);
+}
+/* Home Page styling end 
+   Form styling start*/
+   .content-form{
+    display: flex;
+    justify-content: center;
+     align-items: center;
+     height: 90vh;
+  }
+  h2 {
+          width: 100%;
+          text-align: center;
+      }
+  form {
+          background-color: #fff;
+          padding: 20px;
+          border-radius: 5px;
+          box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+          width: 80%;
+          max-width: 600px; /* Increased max-width for two-column layout */
+          display: flex;
+          flex-wrap: wrap; /* Allow elements to wrap to the next line */
+          justify-content: space-between; /* Space elements evenly between the columns */
+      }
+  
+      input[type="text"], textarea {
+          width: 100%;
+          padding: 10px;
+          margin: 8px 0;
+          box-sizing: border-box;
+          border: 1px solid #ccc;
+          border-radius: 4px;
+      }
+  
+      input[type="submit"] {
+          background-color: #87CEEB;
+          color: white;
+          padding: 14px 20px;
+          margin: 8px 0;
+          border: none;
+          border-radius: 4px;
+          cursor: pointer;
+          width: 100%;
+      }
+  
+      input[type="submit"]:hover {
+          background-color: rgb(85, 26, 139);
+      }
+      @media screen and (max-width: 600px) {
+          form label,
+          form input[type="text"],
+          form input[type="email"],
+          form textarea {
+              width: 100%; /* Make elements full width on smaller screens */
+          }
+      }
+/*Form styling end 
+   View page styling*/
+.content-blog {
+    display: flex;
+    justify-content: center;
+    height: 75vh;
+    width: 100rem;
+    align-items: center;
+    background-color: #fff;
+    border-radius: 5px;
+
+}
+.container-view{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 100%;
+    max-height: 100%;
+    flex-wrap: wrap;
+}
+
+.blog-titles{
+    width: 20%;
+}
+.blog-content {
+    width: 80%;
+    text-align: center;  /* Adjust the width as needed */
+}
+
+.blog-titles {
+    margin-right: 20px;
+    text-align: center; 
+}
+.blog-titles ul{
+    list-style: none;
+}
+.blog-content {
+    margin-left: 20px;
+}
+.blog-title:hover {
+    text-decoration: underline; /* Add underline on hover */
+}
+@media screen and (max-width: 800px) {
+    .content-blog {
+        flex-wrap: wrap; 
+        max-width: fit-content;
+        padding-top: 50px;/* Make elements full width on smaller screens */
+    }
+}
+/*Delete blog */
+.delete-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+table {
+    width: 50%;
+    border-collapse: collapse;
+}
+th, td {
+    border: 1px solid black;
+    padding: 8px;
+    text-align: center;
+    font-size: 20px;
+}
+th {
+    background-color: rgba(135, 206, 235, 0.5);
+}
+.delete-form {
+    display: inline-block;
+}
+.delete-form button{
+    background-color: rgba(135, 206, 235, 0.5);
+    padding: 10px;
+}
+.delete-form button:hover {
+    background-color: rgb(85, 26, 139);
+    color: #fff;
+}

@@ -1,0 +1,28 @@
+<%- include("partials/header.ejs") %>
+<div class="conainer-view">
+<div class="content-blog">
+    <div class="blog-titles">
+        <h2>All Blog Titles</h2>
+        <ul>
+            <% blogsData.forEach(blog => { %>
+                <li class="blog-title"><a href="/view?title=<%= encodeURIComponent(blog.title) %>"><%= blog.title %></a></li>
+            <% }); %>
+        </ul>
+    </div>
+    <div class="blog-content">
+        <h2>Selected Blog</h2>
+        <div id="blogContent">
+            <% if(clickedBlog){ %>
+                <h3><%= clickedBlog.title %></h3>
+                <p><strong>Author:</strong> <%= clickedBlog.Name %></p>
+                <p><strong>Content:</strong> <%= clickedBlog.content %></p>
+                <p><strong>Notes:</strong> <%= clickedBlog.note %></p>
+                <p><strong>Thanks:</strong> <%= clickedBlog.thank %></p>
+            <% } else { %>
+                <h2>No blog selected</h2>
+            <% } %>
+        </div>
+    </div>
+</div>
+</div>
+<%- include("partials/footer.ejs") %>

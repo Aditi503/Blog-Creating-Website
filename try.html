@@ -1,0 +1,35 @@
+<%- include("partials/header.ejs") %>
+<div class="view-container">
+    <div class="blog-titles">
+        <h2>All Blog Titles</h2>
+        <ul>
+            <% blogs.forEach(blog => { %>
+                <li class="blog-title" onclick="showBlogContent('<%= blog.title %>')"><%= blog.title %></li>
+            <% }); %>
+        </ul>
+    </div>
+    <div class="blog-content">
+        <h2>Selected Blog</h2>
+        <div id="blogContent">
+            <!-- Blog content will be displayed here -->
+        </div>
+    </div>
+</div>
+<script>
+    function showBlogContent(title) {
+        fetch(`/blog/${encodeURIComponent(title)}`)
+            .then(response => response.json())
+            .then(data => {
+                const blogContentDiv = document.getElementById('blogContent');
+                blogContentDiv.innerHTML = `
+                    <h3>${data.title}</h3>
+                    <p><strong>Author:</strong> ${data.Name}</p>
+                    <p><strong>Content:</strong> ${data.content}</p>
+                    <p><strong>Notes:</strong> ${data.note}</p>
+                    <p><strong>Thanks:</strong> ${data.thank}</p>
+                `;
+            })
+            .catch(error => console.error('Error fetching blog:', error));
+    }
+</script>
+<%- include("partials/footer.ejs") %>
